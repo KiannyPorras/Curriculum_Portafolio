@@ -41,7 +41,7 @@ Contacto
 
 Si deseas más información o colaborar con nosotras:  
 
-- Correo electrónico: (aquí puedes añadir uno profesional)  
+- Correo electrónico:  
 - GitHub: [KiannyPorras](https://github.com/KiannyPorras)  
 - GitHub: [YulissaPoveda](https://github.com/YulissaPoveda)  
 
