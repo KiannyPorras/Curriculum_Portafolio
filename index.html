@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kianny & Yulissa · Currículum + Portafolio</title>
+  <meta name="description" content="Currículum y portafolio conjunto de Kianny Porras y Yulissa Poveda." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body class="light">
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">KP &amp; YP</a>
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#presentacion">Inicio</a></li>
+          <li><a href="#contacto" id="navPerfiles">Perfiles</a></li>
+          <li><a class="btn" href="portfolio.html">Proyectos en Conjunto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón cambio de tema -->
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero con ambos nombres -->
+    <section id="presentacion" class="hero section solo">
+      <div class="container hero-center">
+        <h1>Kianny Porras &amp; Yulissa Poveda</h1>
+        <p class="lead">Ing. en Sistemas</p>
+        <p class="muted">Haz clic en un currículum para ver detalles o entra a Proyectos en Conjunto.</p>
+      </div>
+    </section>
+
+    <!-- Dos perfiles con foto + nombre + botón Curriculum -->
+    <section id="personas" class="section">
+      <div class="container grid2-portrait">
+        <article class="card profile">
+          <img class="avatar" src="assets/kianny.jpg" alt="Foto de Kianny Porras" />
+          <h3 class="center">Kianny Porras</h3>
+          <a class="btn-outline full" href="cv-kianny.html">Curriculum</a>
+        </article>
+        <article class="card profile">
+          <img class="avatar" src="assets/yulissa.jpg" alt="Foto de Yulissa Poveda" />
+          <h3 class="center">Yulissa Poveda</h3>
+          <a class="btn-outline full" href="cv-yulissa.html">Curriculum</a>
+        </article>
+      </div>
+
+      <div class="container center mt-2">
+        <a class="btn" href="portfolio.html">Proyectos en Conjunto</a>
+      </div>
+    </section>
+
+    <!-- Perfiles + Contacto -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Perfiles &amp; Contacto</h2>
+
+        <!-- Mini perfiles arriba -->
+        <div class="grid2-portrait" style="margin-bottom:1rem">
+          <article class="card profile">
+            <img class="avatar" src="assets/kianny.jpg" alt="Foto de Kianny Porras" />
+            <h3 class="center">Kianny Porras</h3>
+          </article>
+          <article class="card profile">
+            <img class="avatar" src="assets/yulissa.jpg" alt="Foto de Yulissa Poveda" />
+            <h3 class="center">Yulissa Poveda</h3>
+          </article>
+        </div>
+
+        <!-- Formulario -->
+        <form id="contactForm" class="contact-card-light" novalidate>
+          <label>Destinataria:
+            <select name="destinataria" id="destinataria" required>
+              <option value="">Selecciona a quién escribir</option>
+              <option value="Kianny">Kianny</option>
+              <option value="Yulissa">Yulissa</option>
+            </select>
+          </label>
+
+          <label>Correo destino:
+            <select name="correoDestino" id="correoDestino" required>
+              <option value="">Selecciona el correo destino</option>
+              <option value="porrasgonzalezkianny@gmail.com" data-persona="Kianny">porrasgonzalezkianny@gmail.com</option>
+              <option value="ypovedacruz@gmail.com" data-persona="Yulissa">ypovedacruz@gmail.com</option>
+            </select>
+          </label>
+
+          <label>Tu email:
+            <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          </label>
+
+          <label>Mensaje:
+            <textarea name="mensaje" rows="5" placeholder="¿Cómo puedo ayudarte?" required minlength="10"></textarea>
+          </label>
+
+          <button type="submit" class="btn-accent">Enviar</button>
+          <p id="formMsg" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Kianny Porras &amp; Yulissa Poveda.</p>
+      <a href="#top">Volver arriba</a>
+    </div>
+  </footer>
+</body>
+</html>

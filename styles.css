@@ -1,0 +1,270 @@
+/* =====================
+   Paleta: minimalista y elegante (claro por defecto)
+   ===================== */
+:root{
+  --bg:#F8F9FA;        /* fondo principal claro */
+  --surface:#FFFFFF;   /* superficies / secciones */
+  --text:#212121;      /* texto principal */
+  --muted:#6C757D;     /* texto secundario */
+  --accent:#0D3B66;    /* acento (navy por defecto) */
+  --card:#FFFFFF;      /* tarjetas */
+  --border:#E5E7EB;    /* bordes */
+}
+/* Acento alternativo (verde bosque) */
+.forest{ --accent:#1B4332; }
+
+/* ===== Modo oscuro (lo activa tu JS añadiendo .dark al <html>) ===== */
+.dark,
+html.dark{
+  --bg:#0b0c0f;
+  --surface:#12141a;
+  --text:#e6e6e6;
+  --muted:#b9b9b9;
+  --card:#12141a;
+  --border:#22252e;
+  /* mantenemos --accent */
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans';
+  background:var(--bg); color:var(--text); line-height:1.6;
+  transition: background .25s ease, color .25s ease;
+}
+img{max-width:100%;display:block;border-radius:1rem}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1100px;margin-inline:auto;padding:1rem}
+.section{padding:4rem 0}
+.section-compact{padding:2rem 0}
+h1,h2,h3{line-height:1.2;margin:0 0 0.75rem}
+.lead{font-size:1.12rem;color:var(--muted)}
+.muted{color:var(--muted)}
+.center{text-align:center}
+.mt-2{margin-top:1.25rem}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.85);
+  border-bottom:1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: background .25s ease, border-color .25s ease;
+}
+.dark .site-header,
+html.dark .site-header{ background:rgba(11,12,15,.85); border-bottom-color:var(--border); }
+
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-weight:800;font-size:1.1rem;color:var(--text)}
+/* Nav */
+.site-nav{display:flex;gap:.75rem;align-items:center}
+.site-nav a{padding:.5rem .75rem;border-radius:.6rem;color:var(--text)}
+.site-nav a:hover{background:var(--surface)}
+.nav ul{display:flex;gap:.75rem;align-items:center;list-style:none;margin:0;padding:0}
+.nav a{padding:.5rem .75rem;border-radius:.6rem}
+.nav a:hover{background:var(--surface)}
+.header-actions{display:flex;gap:.5rem;align-items:center}
+
+/* Botones */
+.btn{
+  background:var(--accent); color:#fff;
+  padding:.7rem 1rem; border-radius:.7rem; display:inline-block;
+  border:1px solid var(--accent);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover{filter:brightness(1.05); transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.btn:active{transform:translateY(0)}
+.btn-outline{border:1px solid var(--accent); background:transparent; color:var(--accent)}
+.btn-outline:hover{background:var(--accent); color:white}
+.btn.full{display:block;text-align:center;width:100%}
+
+/* Tarjetas / helpers */
+.cards{align-items:start}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.25rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  will-change: transform; /* para el efecto tilt en JS */
+}
+.card-body{display:grid;gap:.75rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{border:1px solid var(--border);padding:.4rem .7rem;border-radius:999px}
+
+/* Hero */
+.hero.solo{display:grid;place-items:center;background:linear-gradient(180deg, var(--surface), transparent)}
+.hero-center{text-align:center;padding:2rem 0}
+.hero-center h1{font-size:clamp(1.8rem,2.6vw,3rem)}
+.hero-center .lead{margin-top:.25rem}
+
+/* Grids */
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:start}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid2-portrait{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;align-items:start}
+
+/* Perfiles */
+.profile .avatar{width:160px;height:160px;object-fit:cover;margin:0 auto .75rem;border-radius:50%;border:4px solid var(--surface)}
+.avatar.big{width:180px;height:180px;border-radius:50%;border:4px solid var(--surface)}
+
+/* Portafolio */
+.project{
+  background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden;
+  display:flex; flex-direction:column; box-shadow:0 6px 18px rgba(0,0,0,.04);
+}
+.project img{aspect-ratio:16/10; object-fit:cover; transition:transform .45s ease; will-change:transform}
+.project:hover img{transform:scale(1.05)}
+.project-body{padding:1rem;display:grid;gap:.7rem}
+.project-actions{display:flex;gap:.5rem}
+
+/* Tablas */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border:1px solid var(--border);padding:.6rem;text-align:left}
+.table thead{background:var(--surface)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;background:var(--card)}
+.footer-inner,.footer-grid{display:flex;align-items:center;justify-content:space-between}
+#backToTop{display:inline-grid;place-items:center;width:2.2rem;height:2.2rem;border:1px solid var(--border);border-radius:.6rem}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid2{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .grid2-portrait{grid-template-columns:1fr}
+}
+@media (max-width: 600px){
+  .grid3{grid-template-columns:1fr}
+  .grid2-portrait{grid-template-columns:1fr}
+}
+
+/* ====== Paso 5: Estilos del formulario de contacto ====== */
+.contact-card-light{
+  max-width: 700px;
+  margin: 2rem auto 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+
+.contact-card-light label{
+  display: grid;
+  gap: .4rem;
+  margin: .85rem 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-card-light input,
+.contact-card-light textarea,
+.contact-card-light select{
+  width: 100%;
+  padding: .75rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+
+.contact-card-light textarea{ resize: vertical; min-height: 120px; }
+.contact-card-light ::placeholder{ color: var(--muted); opacity: .9; }
+
+.contact-card-light input:focus-visible,
+.contact-card-light textarea:focus-visible,
+.contact-card-light select:focus-visible{
+  outline: 2px solid transparent;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.contact-card-light select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.25rem;
+}
+
+.contact-card-light .btn-accent{
+  margin-top: .5rem;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+  padding: .75rem 1rem;
+  border-radius: .7rem;
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.contact-card-light .btn-accent:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+#formMsg{ margin-top: .6rem; font-weight: 600; }
+.msg-ok{ color: #2e7d32; }
+.msg-error{ color: #c62828; }
+
+.contact-card-light input:invalid,
+.contact-card-light textarea:invalid,
+.contact-card-light select:invalid{
+  border-color: #e57373;
+}
+.contact-card-light input:invalid:focus-visible,
+.contact-card-light textarea:invalid:focus-visible,
+.contact-card-light select:invalid:focus-visible{
+  box-shadow: 0 0 0 3px rgba(229, 115, 115, .35);
+}
+
+@media (max-width: 600px){
+  .contact-card-light{ padding: 1rem; }
+  .contact-card-light .btn-accent{ width: 100%; }
+}
+
+#contacto h2:focus{
+  outline: 2px solid var(--accent);
+  outline-offset: .25rem;
+  border-radius: .4rem;
+}
+
+/* --- Ajuste: ocultar #contacto y mostrar solo cuando tiene :target --- */
+#contacto { display: none; }
+#contacto:target { display: block; }
+
+/* Scroll suave y evitar que el header tape el inicio */
+html { scroll-behavior: smooth; }
+#contacto { scroll-margin-top: 90px; }
+
+
+/* ===== Alinear el botón "Código" al fondo en las tarjetas de proyectos ===== */
+.grid3.cards { align-items: stretch; }            /* las tarjetas ocupan la misma altura */
+
+.project {                                        /* la tarjeta es una columna flex */
+  display: flex;
+  flex-direction: column;
+}
+
+.project img {                                    /* la imagen no crece */
+  flex: 0 0 auto;
+}
+
+.project .card-body {                             /* el cuerpo llena el espacio disponible */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;                                     /* mantiene el espaciado entre título y texto */
+}
+
+.project .actions {                               /* el contenedor del botón baja al fondo */
+  margin-top: auto;
+  display: flex;                                  /* por si quieres más de un botón a futuro */
+}

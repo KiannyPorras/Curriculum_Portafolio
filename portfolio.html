@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio · Kianny Porras</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body class="light">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">KP<span>·</span>Dev</a>
+      <nav class="nav" aria-label="Portafolio">
+        <ul>
+          <li><a href="index.html#presentacion">Inicio</a></li>
+          <!-- Paso 3: Enlace directo al contacto en index -->
+          <li><a href="index.html#contacto">Perfiles</a></li>
+          <li><button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">🌓</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Proyectos</h1>
+      <div class="filters">
+        <button class="chip filter-btn is-active" data-filter="all">Todos</button>
+        <button class="chip filter-btn" data-filter="frontend">Frontend</button>
+        <button class="chip filter-btn" data-filter="backend">Backend</button>
+        <button class="chip filter-btn" data-filter="fullstack">Full-Stack</button>
+      </div>
+
+      <div id="grid" class="grid3 cards">
+        <article class="card project" data-tags="fullstack">
+          <img src="assets/proyecto1.jpg" alt="Sistema de Estética Canina" />
+          <div class="card-body">
+            <h3>Sistema de Estética Canina</h3>
+            <p>Proyecto académico desarrollado para administrar una clínica veterinaria.  
+              Incluye registro de animales, control de citas y asignación de cuidadores.  
+              Se aplicaron conceptos de programación orientada a objetos como herencia, polimorfismo y manejo de archivos.  
+              Rol: programadora.</p>
+            <div class="actions"> </p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/KiannyPorras/Proyecto_Estetica_Canina" target="_blank" rel="noopener">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="frontend">
+          <img src="assets/proyecto2.jpg" alt="Sistema Gestión Cliníca" />
+          <div class="card-body">
+            <h3>Sistema de Gestión Cliníca</h3>
+            <p>Proyecto académico desarrollado en C++ aplicando herencia, polimorfismo y manejo de archivos. 
+            Incluye módulos para pacientes, doctores, citas y medicamentos. Rol: programadora. 
+            Tecnologías: C++, Visual Studio</p>
+            <div class="actions"></p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/KiannyPorras/Proyecto-Gestion-de-Clinica" target="_blank" rel="noopener">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="backend">
+          <img src="assets/proyecto3.jpg" alt="Sistema de Compras Online" />
+          <div class="card-body">
+            <h3>Sistema de Compras Online</h3>
+            <p>Proyecto universitario que consistió en el desarrollo de un sistema para enviar correos electrónicos automáticos confirmando compras realizadas en línea. 
+            Implementación de conexión a servidor SMTP, manejo de formularios y validación de datos de compra. Rol: programadora.
+             Tecnologías:C#,DBeaver</p>
+            <div class="actions"></p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/KiannyPorras/Proyecto-API" target="_blank" rel="noopener">Código</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Kianny Porras &amp; Yulissa Poveda.</p>
+      <!-- Paso 3: Enlace del footer también al contacto en index -->
+      <a href="index.html#contacto">Contactar</a>
+    </div>
+  </footer>
+</body>
+</html>
